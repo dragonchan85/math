@@ -15,7 +15,7 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            height: 100vh;
+            height: 100%;
             overflow: hidden;
         }
         h1 {
@@ -32,6 +32,7 @@
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
             max-width: 500px;
             width: 100%;
+            margin-bottom: 100px; /* 여백을 주어서 하단에 광고가 겹치지 않게 함 */
         }
         .problem {
             font-size: 1.5rem;
@@ -86,12 +87,16 @@
                 font-size: 1.2rem;
             }
         }
-        /* 광고 영역 스타일 */
+        /* 광고 영역 고정 위치 */
         .ad-container {
-            margin-top: 20px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
             width: 100%;
             display: flex;
             justify-content: center;
+            padding: 10px;
+            background-color: #f1f1f1;
         }
     </style>
 </head>
@@ -105,23 +110,23 @@
         <input type="number" id="answerInput" placeholder="정답을 입력하세요">
         <button onclick="checkAnswers()">정답 확인</button>
 
-        <!-- 구글 애드센스 광고 (정답 확인 바로 밑) -->
-        <div class="ad-container">
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9288770962100185"
-            crossorigin="anonymous"></script>
-            <ins class="adsbygoogle"
-                style="display:block"
-                data-ad-client="ca-pub-9288770962100185"
-                data-ad-slot="6399153707"
-                data-ad-format="auto"
-                data-full-width-responsive="true"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
-
         <div class="result" id="scoreResult"></div>
         <div class="answer-list" id="answerList"></div>
+    </div>
+
+    <!-- 구글 애드센스 광고 (하단 고정) -->
+    <div class="ad-container">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9288770962100185"
+            crossorigin="anonymous"></script>
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-9288770962100185"
+            data-ad-slot="6399153707"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
     </div>
 
     <script>

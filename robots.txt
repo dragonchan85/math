@@ -2,4 +2,4 @@ User-agent: *
 Disallow: /private/
 Allow: /
 
-Sitemap: https://dragonchan85.github.io/math/sitemap.xml
+Sitemap: https://math.yesnomark.com/sitemap.xml
